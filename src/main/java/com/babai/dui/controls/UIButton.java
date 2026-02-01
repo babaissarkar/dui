@@ -21,7 +21,7 @@
  * 
  */
 
-package com.babai.dui.ui.controls;
+package com.babai.dui.controls;
 
 import java.awt.Insets;
 

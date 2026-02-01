@@ -21,7 +21,7 @@
  * 
  */
 
-package com.babai.dui.ui.controls;
+package com.babai.dui.controls;
 
 import java.awt.Insets;
 import java.awt.event.KeyAdapter;
@@ -32,7 +32,7 @@ import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
-import com.babai.dui.ui.controls.DUI.Text;
+import com.babai.dui.controls.DUI.Text;
 
 public class UIInput extends JTextField
 	implements UIStylizable<UIInput>, UIStateful<UIInput>

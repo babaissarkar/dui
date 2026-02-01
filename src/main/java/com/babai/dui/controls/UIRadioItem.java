@@ -1,5 +1,5 @@
 /*
- * UICheckItem.java
+ * UIRadioItem.java
  *
  * Copyright 2025-2026 Subhraman Sarkar <suvrax@gmail.com>
  *
@@ -19,22 +19,22 @@
  * MA 02110-1301, USA.
  */
 
-package com.babai.dui.ui.controls;
+package com.babai.dui.controls;
 
-import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JRadioButtonMenuItem;
 
-public class UICheckItem extends JCheckBoxMenuItem {
-	public UICheckItem text(String text) {
+public class UIRadioItem extends JRadioButtonMenuItem {
+	public UIRadioItem text(String text) {
 		setText(text);
 		return this;
 	}
 	
-	public UICheckItem selected(boolean sel) {
+	public UIRadioItem selected(boolean sel) {
 		setSelected(sel);
 		return this;
 	}
 	
-	public UICheckItem onClick(Runnable action) {
+	public UIRadioItem onClick(Runnable action) {
 		addActionListener(e -> action.run());
 		return this;
 	}

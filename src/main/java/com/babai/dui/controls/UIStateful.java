@@ -19,7 +19,7 @@
  * MA 02110-1301, USA.
  */
 
-package com.babai.dui.ui.controls;
+package com.babai.dui.controls;
 
 import javax.swing.JComponent;
 

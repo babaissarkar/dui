@@ -20,14 +20,14 @@
  * 
  * 
  */
-package com.babai.dui.ui.controls;
+package com.babai.dui.controls;
 
 import java.awt.Component;
 import java.awt.LayoutManager;
 
 import javax.swing.JInternalFrame;
 
-import static com.babai.dui.ui.controls.DUI.borderPane;
+import static com.babai.dui.controls.DUI.borderPane;
 
 public class UIFrame extends JInternalFrame implements UIStylizable<UIFrame> {
 

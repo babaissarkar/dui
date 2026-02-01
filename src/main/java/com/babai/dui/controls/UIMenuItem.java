@@ -1,5 +1,5 @@
 /*
- * UICheckBoxItem.java
+ * UIMenuItem.java
  *
  * Copyright 2025-2026 Subhraman Sarkar <suvrax@gmail.com>
  *
@@ -19,19 +19,25 @@
  * MA 02110-1301, USA.
  */
 
-package com.babai.dui.ui.controls;
+package com.babai.dui.controls;
 
-import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JMenuItem;
+import javax.swing.KeyStroke;
 
-public class UICheckBoxItem extends JCheckBoxMenuItem {
+public class UIMenuItem extends JMenuItem {
 	
-	public UICheckBoxItem selected(boolean sel) {
-		setSelected(sel);
+	public UIMenuItem text(String text) {
+		setText(text);
 		return this;
 	}
 	
-	public UICheckBoxItem onClick(Runnable action) {
-		addActionListener(e -> action.run());
+	public UIMenuItem hotkey(String shortcut) {
+		this.setAccelerator(KeyStroke.getKeyStroke(shortcut));
+		return this;
+	}
+	
+	public UIMenuItem onClick(Runnable action) {
+		this.addActionListener(e -> action.run());
 		return this;
 	}
 }

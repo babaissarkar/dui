@@ -1,6 +1,6 @@
-package com.babai.dui.ui.controls;
+package com.babai.dui.controls;
 
-import static com.babai.dui.ui.controls.DUI.borderPane;
+import static com.babai.dui.controls.DUI.borderPane;
 
 import java.awt.Component;
 

@@ -1,5 +1,5 @@
 /*
- * UIHBox.java
+ * UIVBox.java
  * 
  * Copyright 2025-2026 Subhraman Sarkar <suvrax@gmail.com>
  * 
@@ -21,32 +21,16 @@
  * 
  */
 
-package com.babai.dui.ui.controls;
+package com.babai.dui.controls;
 
-import java.awt.FlowLayout;
+import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 
-/** specialization of JPanel that acts like a horizontal box */
-public class UIHBox extends JPanel
-	implements UIStylizable<UIHBox>, UIStateful<UIHBox>
-{
-	private FlowLayout layout;
-
-	public UIHBox() {
-		layout = new FlowLayout();
+public class UIVBox extends JPanel implements UIStylizable<UIVBox> {
+	private BoxLayout layout;
+	
+	public UIVBox() {
+		layout = new BoxLayout(this, BoxLayout.PAGE_AXIS);
 		setLayout(layout);
-	}
-
-	public UIHBox align(int align) {
-		layout.setAlignment(align);
-		setLayout(layout);
-		return this;
-	}
-
-	public UIHBox gap(int hgap, int vgap) {
-		layout.setHgap(hgap);
-		layout.setVgap(vgap);
-		setLayout(layout);
-		return this;
 	}
 }

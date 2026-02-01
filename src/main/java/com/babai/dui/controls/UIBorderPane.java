@@ -1,5 +1,5 @@
 /*
- * UILabel.java
+ * UIBorderPane.java
  * 
  * Copyright 2025-2026 Subhraman Sarkar <suvrax@gmail.com>
  * 
@@ -21,35 +21,44 @@
  * 
  */
 
-package com.babai.dui.ui.controls;
+package com.babai.dui.controls;
 
+import java.awt.BorderLayout;
 import java.awt.Component;
-import java.awt.Font;
 
-import javax.swing.JLabel;
+import javax.swing.JPanel;
 
-public class UILabel extends JLabel
-	implements UIStylizable<UILabel>, UIStateful<UILabel>
-{	
-	public UILabel() {
-		// for now, labels are left aligned inside layout manager by default
-		setAlignmentX(Component.LEFT_ALIGNMENT);
+public class UIBorderPane extends JPanel implements UIStylizable<UIBorderPane> {
+	private BorderLayout layout;
+	
+	public UIBorderPane() {
+		layout = new BorderLayout();
+		setLayout(layout);
 	}
 	
-	public UILabel text(String text) {
-		setText(text);
+	public UIBorderPane north(Component c) {
+		add(c, BorderLayout.NORTH);
 		return this;
 	}
 	
-	// Binding type: text StateVar -> JLabel's text
-	public UILabel bindTextFrom(StateVar<String> text) {
-		setText(text.get());
-		text.onChange(str -> setText(str));
+	public UIBorderPane south(Component c) {
+		add(c, BorderLayout.SOUTH);
+		return this;
+	}
+	
+	public UIBorderPane east(Component c) {
+		add(c, BorderLayout.EAST);
+		return this;
+	}
+	
+	public UIBorderPane west(Component c) {
+		add(c, BorderLayout.WEST);
+		return this;
+	}
+	
+	public UIBorderPane center(Component c) {
+		add(c, BorderLayout.CENTER);
 		return this;
 	}
 
-	public UILabel font(Font font) {
-		setFont(font);
-		return this;
-	}
 }

@@ -1,5 +1,5 @@
 /*
- * UISplitPane.java
+ * UITabPane.java
  *
  * Copyright 2025-2026 Subhraman Sarkar <suvrax@gmail.com>
  *
@@ -19,31 +19,21 @@
  * MA 02110-1301, USA.
  */
 
-package com.babai.dui.ui.controls;
+package com.babai.dui.controls;
 
 import java.awt.Component;
+import java.util.function.Consumer;
 
-import javax.swing.JSplitPane;
+import javax.swing.JTabbedPane;
 
-public class UISplitPane extends JSplitPane {
-	
-	public UISplitPane type(int orientation) {
-		setOrientation(orientation);
+public class UITabPane extends JTabbedPane {
+	public UITabPane tab(String tabName, Component c) {
+		addTab(tabName, c);
 		return this;
 	}
 	
-	public UISplitPane dividerLoc(int loc) {
-		setDividerLocation(loc);
-		return this;
-	}
-	
-	public UISplitPane top(Component c) {
-		setTopComponent(c);
-		return this;
-	}
-	
-	public UISplitPane bottom(Component c) {
-		setBottomComponent(c);
+	public UITabPane onChange(Consumer<Integer> action) {
+		addChangeListener(e -> action.accept(getSelectedIndex()));
 		return this;
 	}
 }
